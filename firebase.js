@@ -1,7 +1,8 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
+const API = process.env.API;
 const firebaseConfig = {
-    apiKey: "AIzaSyDE3JXWgoNoUrIzWzBH5ZDOphgXEUkys-U",
+    apiKey: API,
     authDomain: "inventory-management-app-6538d.firebaseapp.com",
     projectId: "inventory-management-app-6538d",
     storageBucket: "inventory-management-app-6538d.appspot.com",
