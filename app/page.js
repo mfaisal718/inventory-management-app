@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import {Camera} from "react-camera-pro";
 import { Box, Stack, Typography, Button, Modal, TextField } from '@mui/material'
 import { firestore } from '@/firebase'
 import {
@@ -30,6 +31,7 @@ const style = {
 
 export default function Home() {
   // We'll add our component logic here
+  
   const [inventory, setInventory] = useState([])
 const [open, setOpen] = useState(false)
 const [itemName, setItemName] = useState('')
@@ -91,7 +93,7 @@ const handleClose = () => setOpen(false)
     >
       <Box sx={style}>
         <Typography id="modal-modal-title" variant="h6" component="h2">
-          Add Item
+          Add Grocery
         </Typography>
         <Stack width="100%" direction={'row'} spacing={2}>
           <TextField
@@ -116,19 +118,19 @@ const handleClose = () => setOpen(false)
       </Box>
     </Modal>
     <Button variant="contained" onClick={handleOpen}>
-      Add New Item
+      Add Grocery
     </Button>
     <Box border={'1px solid #333'}>
       <Box
         width="800px"
         height="100px"
-        bgcolor={'#ADD8E6'}
+        bgcolor={'black'}
         display={'flex'}
         justifyContent={'center'}
         alignItems={'center'}
       >
-        <Typography variant={'h2'} color={'#333'} textAlign={'center'}>
-          Inventory Items
+        <Typography variant={'h2'} color={'red'} textAlign={'center'}>
+          Grocery List
         </Typography>
       </Box>
       <Stack width="800px" height="300px" spacing={2} overflow={'auto'}>
